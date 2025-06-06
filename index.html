@@ -25,6 +25,12 @@
             --accent-color: #60a5fa;
         }
 
+        /* ----- 🚑  HORIZONTAL SCROLL FIX  ----- */
+        html, body {
+            /* Prevent any element from extending viewport width */
+            overflow-x: hidden;
+        }
+
         body {
             background: var(--bg-primary);
             color: var(--text-primary);
@@ -121,6 +127,12 @@
                 height: 90vw;
                 max-width: 320px;
                 max-height: 320px;
+            }
+
+            /* Mobile: neutralise slide-in offset so content stays within viewport */
+            .slide-in-left,
+            .slide-in-right {
+                transform: none;
             }
         }
     </style>
