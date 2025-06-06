@@ -88,6 +88,26 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* スライドインアニメーション */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .slide-in-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .slide-in-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         .theme-toggle {
             position: fixed;
             top: 20px;
@@ -121,7 +141,7 @@
             </header>
 
             <!-- Profile Photo Section -->
-            <section class="card rounded-xl p-8 mb-8 text-center fade-in">
+            <section class="card rounded-xl p-8 mb-8 text-center slide-in-left">
                 <div class="mb-6">
                     <img id="profileImage" 
                          src="https://yoguruto4.github.io/-/IMG_7503.jpg" 
@@ -147,7 +167,7 @@
             </section>
 
             <!-- Profile Table -->
-            <section class="card rounded-xl p-8 mb-8 fade-in">
+            <section class="card rounded-xl p-8 mb-8 slide-in-right">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-user mr-3 text-blue-500"></i>プロフィール
                 </h2>
@@ -182,7 +202,7 @@
             </section>
 
             <!-- Career Timeline -->
-            <section class="card rounded-xl p-8 mb-8 fade-in">
+            <section class="card rounded-xl p-8 mb-8 slide-in-left">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-graduation-cap mr-3 text-blue-500"></i>経歴の概要
                 </h2>
@@ -212,7 +232,7 @@
             </section>
 
             <!-- Personality -->
-            <section class="card rounded-xl p-8 mb-8 fade-in">
+            <section class="card rounded-xl p-8 mb-8 slide-in-right">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-heart mr-3 text-blue-500"></i>私の性格
                 </h2>
@@ -237,7 +257,7 @@
             </section>
 
             <!-- Interests -->
-            <section class="card rounded-xl p-8 mb-8 fade-in">
+            <section class="card rounded-xl p-8 mb-8 slide-in-left">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-star mr-3 text-blue-500"></i>好きなもの
                 </h2>
@@ -339,7 +359,7 @@
             </section>
 
             <!-- Strengths -->
-            <section class="card rounded-xl p-8 mb-8 fade-in">
+            <section class="card rounded-xl p-8 mb-8 slide-in-right">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-trophy mr-3 text-blue-500"></i>私の強み
                 </h2>
@@ -360,7 +380,7 @@
             </section>
 
             <!-- Message -->
-            <section class="card rounded-xl p-8 mb-8 fade-in">
+            <section class="card rounded-xl p-8 mb-8 slide-in-left">
                 <h2 class="text-2xl font-bold mb-6 flex items-center">
                     <i class="fas fa-envelope mr-3 text-blue-500"></i>メッセージ
                 </h2>
@@ -447,26 +467,22 @@
             }
         });
 
-        // Scroll Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // スライドイニメーション
+        document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+            el.classList.remove('active');
+        });
 
-        const observer = new IntersectionObserver((entries) => {
+        const slideObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('active');
+                    slideObserver.unobserve(entry.target); // 一度だけアニメーション
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
+        document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+            slideObserver.observe(el);
         });
     </script>
 </body>
