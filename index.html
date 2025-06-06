@@ -29,7 +29,6 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             transition: all 0.3s ease;
-            overflow-x: hidden;
         }
 
         .card {
@@ -39,6 +38,8 @@
         }
 
         .profile-image {
+            width: 500px;
+            height: 500px;
             object-fit: cover;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -136,280 +137,278 @@
         トップへ
     </a>
 
-    <div class="max-w-full md:max-w-4xl mx-auto px-2 sm:px-4">
-        <div class="min-h-screen py-8 px-4">
-            <div class="max-w-4xl mx-auto">
-                <!-- Header -->
-                <header class="text-center mb-12 fade-in">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--accent-color)">
-                        成田陽亮
-                    </h1>
-                    <p class="text-xl" style="color: var(--text-secondary)">
-                        新人エンジニア
+    <div class="min-h-screen py-8 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Header -->
+            <header class="text-center mb-12 fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--accent-color)">
+                    成田陽亮
+                </h1>
+                <p class="text-xl" style="color: var(--text-secondary)">
+                    株式会社サンソウシステムズ 新入社員
+                </p>
+            </header>
+
+            <!-- Profile Photo Section -->
+            <section class="card rounded-xl p-8 mb-8 text-center slide-in-left">
+                <div class="mb-6">
+                    <img id="profileImage" 
+                         src="https://yoguruto4.github.io/-/IMG_7503.jpg" 
+                         alt="成田陽亮の写真" 
+                         class="profile-image profile-pic rounded-full mx-auto border-4 border-blue-500">
+                    <p class="mt-4 text-sm" style="color: var(--text-secondary)">
+                        <i class="fas fa-camera mr-2"></i>写真をクリックして変更
                     </p>
-                </header>
+                </div>
+                
+                <!-- Photo Selection -->
+                <div class="flex justify-center space-x-4 mt-4">
+                    <button onclick="changeProfilePhoto(1)" class="w-16 h-16 rounded-full border-2 border-gray-300 overflow-hidden hover:border-blue-500 transition-all">
+                        <img src="https://yoguruto4.github.io/-/IMG_7503.jpg" alt="写真1" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeProfilePhoto(2)" class="w-16 h-16 rounded-full border-2 border-gray-300 overflow-hidden hover:border-blue-500 transition-all">
+                        <img src="IMG_0973.JPG" alt="写真2" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeProfilePhoto(3)" class="w-16 h-16 rounded-full border-2 border-gray-300 overflow-hidden hover:border-blue-500 transition-all">
+                        <img src="IMG_1885.JPG" alt="写真3" class="w-full h-full object-cover" style="object-position: center top;">
+                    </button>
+                </div>
+            </section>
 
-                <!-- Profile Photo Section -->
-                <section class="card rounded-xl p-8 mb-8 text-center slide-in-left">
-                    <div class="mb-6">
-                        <img id="profileImage" 
-                             src="https://yoguruto4.github.io/-/IMG_7503.jpg" 
-                             alt="成田陽亮の写真" 
-                             class="profile-image profile-pic rounded-full mx-auto border-4 border-blue-500 object-cover max-w-full">
-                        <p class="mt-4 text-sm" style="color: var(--text-secondary)">
-                            <i class="fas fa-camera mr-2"></i>写真をクリックして変更
-                        </p>
-                    </div>
-                    
-                    <!-- Photo Selection -->
-                    <div class="flex justify-center space-x-4 mt-4">
-                        <button onclick="changeProfilePhoto(1)" class="w-16 h-16 rounded-full border-2 border-gray-300 overflow-hidden hover:border-blue-500 transition-all">
-                            <img src="https://yoguruto4.github.io/-/IMG_7503.jpg" alt="写真1" class="w-full h-full object-cover">
-                        </button>
-                        <button onclick="changeProfilePhoto(2)" class="w-16 h-16 rounded-full border-2 border-gray-300 overflow-hidden hover:border-blue-500 transition-all">
-                            <img src="IMG_0973.JPG" alt="写真2" class="w-full h-full object-cover">
-                        </button>
-                        <button onclick="changeProfilePhoto(3)" class="w-16 h-16 rounded-full border-2 border-gray-300 overflow-hidden hover:border-blue-500 transition-all">
-                            <img src="IMG_1885.JPG" alt="写真3" class="w-full h-full object-cover" style="object-position: center top;">
-                        </button>
-                    </div>
-                </section>
+            <!-- Profile Table -->
+            <section class="card rounded-xl p-8 mb-8 slide-in-right">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-user mr-3 text-blue-500"></i>プロフィール
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <tr class="border-b" style="border-color: var(--border-color)">
+                            <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">名前</th>
+                            <td class="py-3 px-4">成田 陽亮（Narita Yosuke）</td>
+                        </tr>
+                        <tr class="border-b" style="border-color: var(--border-color)">
+                            <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">出身地</th>
+                            <td class="py-3 px-4">東京都</td>
+                        </tr>
+                        <tr class="border-b" style="border-color: var(--border-color)">
+                            <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">所属会社</th>
+                            <td class="py-3 px-4">株式会社サンソウシステムズ</td>
+                        </tr>
+                        <tr class="border-b" style="border-color: var(--border-color)">
+                            <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">趣味</th>
+                            <td class="py-3 px-4">ゲーム、音楽を聴く</td>
+                        </tr>
+                        <tr class="border-b" style="border-color: var(--border-color)">
+                            <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">特技</th>
+                            <td class="py-3 px-4">どこでも寝れること</td>
+                        </tr>
+                        <tr>
+                            <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">目標</th>
+                            <td class="py-3 px-4">アサイン後に即戦力となれるようになること</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
 
-                <!-- Profile Table -->
-                <section class="card rounded-xl p-8 mb-8 slide-in-right">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-user mr-3 text-blue-500"></i>プロフィール
-                    </h2>
-                    <div class="overflow-x-auto">
-                        <table class="w-full max-w-full">
-                            <tr class="border-b" style="border-color: var(--border-color)">
-                                <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">名前</th>
-                                <td class="py-3 px-4">成田 陽亮（Narita Yosuke）</td>
-                            </tr>
-                            <tr class="border-b" style="border-color: var(--border-color)">
-                                <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">出身地</th>
-                                <td class="py-3 px-4">東京都</td>
-                            </tr>
-                            <tr class="border-b" style="border-color: var(--border-color)">
-                                <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">所属会社</th>
-                                <td class="py-3 px-4">株式会社サンソウシステムズ</td>
-                            </tr>
-                            <tr class="border-b" style="border-color: var(--border-color)">
-                                <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">趣味</th>
-                                <td class="py-3 px-4">ゲーム、音楽を聴く</td>
-                            </tr>
-                            <tr class="border-b" style="border-color: var(--border-color)">
-                                <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">特技</th>
-                                <td class="py-3 px-4">どこでも寝れること</td>
-                            </tr>
-                            <tr>
-                                <th class="text-left py-3 px-4 font-semibold" style="color: var(--text-secondary)">目標</th>
-                                <td class="py-3 px-4">アサイン後に即戦力となれるようになること</td>
-                            </tr>
-                        </table>
+            <!-- Career Timeline -->
+            <section class="card rounded-xl p-8 mb-8 slide-in-left">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap mr-3 text-blue-500"></i>経歴の概要
+                </h2>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-gray-500 text-white rounded-full flex items-center justify-center font-bold">
+                            卒
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">大学卒業</h3>
+                            <p style="color: var(--text-secondary)">神奈川県の某私立大学 法学部卒業</p>
+                            <span class="text-sm font-medium text-blue-500">2024</span>
+                        </div>
                     </div>
-                </section>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 overflow-hidden rounded-full">
+                            <img src="https://yoguruto4.github.io/-/294901023_416992047114274_794512046332877522_n.jpg" 
+                                 alt="Sansou Logo" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">入社</h3>
+                            <p style="color: var(--text-secondary)">株式会社サンソウシステムズに入社</p>
+                            <span class="text-sm font-medium text-blue-500">2025</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Career Timeline -->
-                <section class="card rounded-xl p-8 mb-8 slide-in-left">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-graduation-cap mr-3 text-blue-500"></i>経歴の概要
-                    </h2>
-                    <div class="space-y-6">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 bg-gray-500 text-white rounded-full flex items-center justify-center font-bold">
-                                卒
+            <!-- Personality -->
+            <section class="card rounded-xl p-8 mb-8 slide-in-right">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-heart mr-3 text-blue-500"></i>私の性格
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="text-center p-4 bg-blue-50 rounded-lg" style="background: var(--bg-primary)">
+                        <i class="fas fa-search text-2xl text-blue-500 mb-2"></i>
+                        <p>好奇心旺盛</p>
+                    </div>
+                    <div class="text-center p-4 bg-green-50 rounded-lg" style="background: var(--bg-primary)">
+                        <i class="fas fa-smile text-2xl text-green-500 mb-2"></i>
+                        <p>ポジティブ</p>
+                    </div>
+                    <div class="text-center p-4 bg-red-50 rounded-lg" style="background: var(--bg-primary)">
+                        <i class="fas fa-fire text-2xl text-red-500 mb-2"></i>
+                        <p>負けず嫌い</p>
+                    </div>
+                    <div class="text-center p-4 bg-purple-50 rounded-lg" style="background: var(--bg-primary)">
+                        <i class="fas fa-clock text-2xl text-purple-500 mb-2"></i>
+                        <p>几帳面</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interests -->
+            <section class="card rounded-xl p-8 mb-8 slide-in-left">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-star mr-3 text-blue-500"></i>好きなもの
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 border rounded-lg" style="border-color: var(--border-color)">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i class="fas fa-gamepad mr-2 text-blue-500"></i>ゲーム（主にPCゲーム）
+                        </h3>
+                    </div>
+                    <div id="youtubeSection" class="youtube-section p-4 border rounded-lg" style="border-color: var(--border-color)">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i class="fab fa-youtube mr-2 text-red-500"></i>Youtubeや配信を見る
+                            <i class="fas fa-chevron-down ml-auto transition-transform" id="youtubeChevron"></i>
+                        </h3>
+                    </div>
+                    <div class="p-4 border rounded-lg" style="border-color: var(--border-color)">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i class="fas fa-music mr-2 text-green-500"></i>音楽を聴くこと（Mrs.GreeenAppleなど）
+                        </h3>
+                    </div>
+                    <div class="p-4 border rounded-lg" style="border-color: var(--border-color)">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i class="fas fa-cocktail mr-2 text-orange-500"></i>お酒を飲むこと（ハイボールが大好き）
+                        </h3>
+                    </div>
+                </div>
+
+                <!-- YouTube Expanded Section -->
+                <div id="youtubeExpanded" class="youtube-collapsed mt-6">
+                    <div class="card rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4 text-center">おすすめYouTuber</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <!-- ゲーム実況 -->
+                            <div class="youtuber-card card rounded-lg p-4 text-center">
+                                <!-- ここに画像を追加 -->
+                                <img src="VxXbNxF2_400x400.jpg" alt="だるまいずごっとの画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
+                                <h4 class="font-semibold mb-2">だるまいずごっと</h4>
+                                <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム実況</p>
+                                <a href="https://www.youtube.com/@darumaisgod" target="_blank" 
+                                   class="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-sm hover:bg-red-600 transition-all">
+                                    チャンネルを見る
+                                </a>
                             </div>
-                            <div>
-                                <h3 class="font-semibold">大学卒業</h3>
-                                <p style="color: var(--text-secondary)">神奈川県の某私立大学 法学部卒業</p>
-                                <span class="text-sm font-medium text-blue-500">2024</span>
+
+                            <div class="youtuber-card card rounded-lg p-4 text-center">
+                                <img src="j61CdEPG_400x400.png" alt="葛葉の画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
+                                <h4 class="font-semibold mb-2">葛葉(Kuzuha Channel)</h4>
+                                <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム実況</p>
+                                <a href="https://www.youtube.com/@hajimesyacho" target="_blank" 
+                                   class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition-all">
+                                    チャンネルを見る
+                                </a>
                             </div>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <div class="w-12 h-12 overflow-hidden rounded-full">
-                                <img src="https://yoguruto4.github.io/-/294901023_416992047114274_794512046332877522_n.jpg" 
-                                     alt="Sansou Logo" class="w-full h-full object-cover">
+
+                            <div class="youtuber-card card rounded-lg p-4 text-center">
+                                <img src="bo0_P9jU.png" alt="K4senの画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
+                                <h4 class="font-semibold mb-2">K4sen</h4>
+                                <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム配信</p>
+                                <a href="https://www.youtube.com/@zzxk4sen" target="_blank" 
+                                   class="inline-block bg-orange-500 text-white px-4 py-2 rounded-full text-sm hover:bg-orange-600 transition-all">
+                                    チャンネルを見る
+                                </a>
                             </div>
-                            <div>
-                                <h3 class="font-semibold">入社</h3>
-                                <p style="color: var(--text-secondary)">株式会社サンソウシステムズに入社</p>
-                                <span class="text-sm font-medium text-blue-500">2025</span>
+
+                            <div class="youtuber-card card rounded-lg p-4 text-center">
+                                <img src="bEE1YV-7_400x400.jpg" alt="釈迦の画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
+                                <h4 class="font-semibold mb-2">釈迦</h4>
+                                <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム実況</p>
+                                <a href="https://www.youtube.com/@SHAKAch" target="_blank" 
+                                   class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-full text-sm hover:bg-yellow-600 transition-all">
+                                    チャンネルを見る
+                                </a>
                             </div>
-                        </div>
-                    </div>
-                </section>
 
-                <!-- Personality -->
-                <section class="card rounded-xl p-8 mb-8 slide-in-right">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-heart mr-3 text-blue-500"></i>私の性格
-                    </h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="text-center p-4 bg-blue-50 rounded-lg" style="background: var(--bg-primary)">
-                            <i class="fas fa-search text-2xl text-blue-500 mb-2"></i>
-                            <p>好奇心旺盛</p>
-                        </div>
-                        <div class="text-center p-4 bg-green-50 rounded-lg" style="background: var(--bg-primary)">
-                            <i class="fas fa-smile text-2xl text-green-500 mb-2"></i>
-                            <p>ポジティブ</p>
-                        </div>
-                        <div class="text-center p-4 bg-red-50 rounded-lg" style="background: var(--bg-primary)">
-                            <i class="fas fa-fire text-2xl text-red-500 mb-2"></i>
-                            <p>負けず嫌い</p>
-                        </div>
-                        <div class="text-center p-4 bg-purple-50 rounded-lg" style="background: var(--bg-primary)">
-                            <i class="fas fa-clock text-2xl text-purple-500 mb-2"></i>
-                            <p>几帳面</p>
-                        </div>
-                    </div>
-                </section>
+                            <div class="youtuber-card card rounded-lg p-4 text-center">
+                                <img src="472172765_1120155659756870_530063559440212956_n.jpg" alt="Mrs.GREEN APPLEの画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
+                                <h4 class="font-semibold mb-2">Mrs.GREEN APPLE</h4>
+                                <p class="text-sm mb-3" style="color: var(--text-secondary)">音楽</p>
+                                <a href="https://www.youtube.com/@MrsGREENAPPLE_Official" target="_blank" 
+                                   class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm hover:bg-green-600 transition-all">
+                                    チャンネルを見る
+                                </a>
+                            </div>
 
-                <!-- Interests -->
-                <section class="card rounded-xl p-8 mb-8 slide-in-left">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-star mr-3 text-blue-500"></i>好きなもの
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="p-4 border rounded-lg" style="border-color: var(--border-color)">
-                            <h3 class="font-semibold flex items-center mb-2">
-                                <i class="fas fa-gamepad mr-2 text-blue-500"></i>ゲーム（主にPCゲーム）
-                            </h3>
-                        </div>
-                        <div id="youtubeSection" class="youtube-section p-4 border rounded-lg" style="border-color: var(--border-color)">
-                            <h3 class="font-semibold flex items-center mb-2">
-                                <i class="fab fa-youtube mr-2 text-red-500"></i>Youtubeや配信を見る
-                                <i class="fas fa-chevron-down ml-auto transition-transform" id="youtubeChevron"></i>
-                            </h3>
-                        </div>
-                        <div class="p-4 border rounded-lg" style="border-color: var(--border-color)">
-                            <h3 class="font-semibold flex items-center mb-2">
-                                <i class="fas fa-music mr-2 text-green-500"></i>音楽を聴くこと（Mrs.GreeenAppleなど）
-                            </h3>
-                        </div>
-                        <div class="p-4 border rounded-lg" style="border-color: var(--border-color)">
-                            <h3 class="font-semibold flex items-center mb-2">
-                                <i class="fas fa-cocktail mr-2 text-orange-500"></i>お酒を飲むこと（ハイボールが大好き）
-                            </h3>
-                        </div>
-                    </div>
-
-                    <!-- YouTube Expanded Section -->
-                    <div id="youtubeExpanded" class="youtube-collapsed mt-6">
-                        <div class="card rounded-xl p-6">
-                            <h3 class="text-xl font-bold mb-4 text-center">おすすめYouTuber</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <!-- ゲーム実況 -->
-                                <div class="youtuber-card card rounded-lg p-4 text-center">
-                                    <!-- ここに画像を追加 -->
-                                    <img src="VxXbNxF2_400x400.jpg" alt="だるまいずごっとの画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
-                                    <h4 class="font-semibold mb-2">だるまいずごっと</h4>
-                                    <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム実況</p>
-                                    <a href="https://www.youtube.com/@darumaisgod" target="_blank" 
-                                       class="inline-block bg-red-500 text-white px-4 py-2 rounded-full text-sm hover:bg-red-600 transition-all">
-                                        チャンネルを見る
-                                    </a>
+                            <div class="youtuber-card card rounded-lg p-4 text-center">
+                                <div class="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center">
+                                    <i class="fas fa-microphone text-white text-xl"></i>
                                 </div>
-
-                                <div class="youtuber-card card rounded-lg p-4 text-center">
-                                    <img src="j61CdEPG_400x400.png" alt="葛葉の画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
-                                    <h4 class="font-semibold mb-2">葛葉(Kuzuha Channel)</h4>
-                                    <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム実況</p>
-                                    <a href="https://www.youtube.com/@hajimesyacho" target="_blank" 
-                                       class="inline-block bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition-all">
-                                        チャンネルを見る
-                                    </a>
-                                </div>
-
-                                <div class="youtuber-card card rounded-lg p-4 text-center">
-                                    <img src="bo0_P9jU.png" alt="K4senの画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
-                                    <h4 class="font-semibold mb-2">K4sen</h4>
-                                    <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム配信</p>
-                                    <a href="https://www.youtube.com/@zzxk4sen" target="_blank" 
-                                       class="inline-block bg-orange-500 text-white px-4 py-2 rounded-full text-sm hover:bg-orange-600 transition-all">
-                                        チャンネルを見る
-                                    </a>
-                                </div>
-
-                                <div class="youtuber-card card rounded-lg p-4 text-center">
-                                    <img src="bEE1YV-7_400x400.jpg" alt="釈迦の画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
-                                    <h4 class="font-semibold mb-2">釈迦</h4>
-                                    <p class="text-sm mb-3" style="color: var(--text-secondary)">ゲーム実況</p>
-                                    <a href="https://www.youtube.com/@SHAKAch" target="_blank" 
-                                       class="inline-block bg-yellow-500 text-white px-4 py-2 rounded-full text-sm hover:bg-yellow-600 transition-all">
-                                        チャンネルを見る
-                                    </a>
-                                </div>
-
-                                <div class="youtuber-card card rounded-lg p-4 text-center">
-                                    <img src="472172765_1120155659756870_530063559440212956_n.jpg" alt="Mrs.GREEN APPLEの画像" class="w-16 h-16 rounded-full mx-auto mb-2 object-cover">
-                                    <h4 class="font-semibold mb-2">Mrs.GREEN APPLE</h4>
-                                    <p class="text-sm mb-3" style="color: var(--text-secondary)">音楽</p>
-                                    <a href="https://www.youtube.com/@MrsGREENAPPLE_Official" target="_blank" 
-                                       class="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm hover:bg-green-600 transition-all">
-                                        チャンネルを見る
-                                    </a>
-                                </div>
-
-                                <div class="youtuber-card card rounded-lg p-4 text-center">
-                                    <div class="w-16 h-16 bg-purple-500 rounded-full mx-auto mb-3 flex items-center justify-center">
-                                        <i class="fas fa-microphone text-white text-xl"></i>
-                                    </div>
-                                    <h4 class="font-semibold mb-2">配信者各種</h4>
-                                    <p class="text-sm mb-3" style="color: var(--text-secondary)">ライブ配信</p>
-                                    <a href="https://www.twitch.tv/" target="_blank" 
-                                       class="inline-block bg-purple-500 text-white px-4 py-2 rounded-full text-sm hover:bg-purple-600 transition-all">
-                                        Twitchを見る
-                                    </a>
-                                </div>
+                                <h4 class="font-semibold mb-2">配信者各種</h4>
+                                <p class="text-sm mb-3" style="color: var(--text-secondary)">ライブ配信</p>
+                                <a href="https://www.twitch.tv/" target="_blank" 
+                                   class="inline-block bg-purple-500 text-white px-4 py-2 rounded-full text-sm hover:bg-purple-600 transition-all">
+                                    Twitchを見る
+                                </a>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <!-- Strengths -->
-                <section class="card rounded-xl p-8 mb-8 slide-in-right">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-trophy mr-3 text-blue-500"></i>私の強み
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="text-center p-6 border rounded-lg" style="border-color: var(--border-color)">
-                            <i class="fas fa-comments text-3xl text-blue-500 mb-4"></i>
-                            <h3 class="font-semibold">コミュニケーション能力</h3>
-                        </div>
-                        <div class="text-center p-6 border rounded-lg" style="border-color: var(--border-color)">
-                            <i class="fas fa-running text-3xl text-green-500 mb-4"></i>
-                            <h3 class="font-semibold">行動力</h3>
-                        </div>
-                        <div class="text-center p-6 border rounded-lg" style="border-color: var(--border-color)">
-                            <i class="fas fa-cog text-3xl text-purple-500 mb-4"></i>
-                            <h3 class="font-semibold">自己管理能力</h3>
-                        </div>
+            <!-- Strengths -->
+            <section class="card rounded-xl p-8 mb-8 slide-in-right">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-trophy mr-3 text-blue-500"></i>私の強み
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 border rounded-lg" style="border-color: var(--border-color)">
+                        <i class="fas fa-comments text-3xl text-blue-500 mb-4"></i>
+                        <h3 class="font-semibold">コミュニケーション能力</h3>
                     </div>
-                </section>
-
-                <!-- Message -->
-                <section class="card rounded-xl p-8 mb-8 slide-in-left">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center">
-                        <i class="fas fa-envelope mr-3 text-blue-500"></i>メッセージ
-                    </h2>
-                    <div class="prose max-w-none">
-                        <p class="mb-4 leading-relaxed">
-                            新入社員として一緒に働くことになり、とても嬉しく思います。<br>
-                            そして、この会社での新たな挑戦に胸を膨らませており、皆さんと共に成長していけることを楽しみにしています。
-                        </p>
-                        <p class="leading-relaxed">
-                            失敗や挫折もあるかもしれませんが、その度に一緒に立ち向かい、共に成長していきましょう。<br>
-                            よろしくお願いします！
-                        </p>
+                    <div class="text-center p-6 border rounded-lg" style="border-color: var(--border-color)">
+                        <i class="fas fa-running text-3xl text-green-500 mb-4"></i>
+                        <h3 class="font-semibold">行動力</h3>
                     </div>
-                </section>
+                    <div class="text-center p-6 border rounded-lg" style="border-color: var(--border-color)">
+                        <i class="fas fa-cog text-3xl text-purple-500 mb-4"></i>
+                        <h3 class="font-semibold">自己管理能力</h3>
+                    </div>
+                </div>
+            </section>
 
-                <!-- Footer -->
-                <footer class="text-center py-8">
-                    <!-- ここから「トップへ」ボタンを削除 -->
-                </footer>
-            </div>
+            <!-- Message -->
+            <section class="card rounded-xl p-8 mb-8 slide-in-left">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-envelope mr-3 text-blue-500"></i>メッセージ
+                </h2>
+                <div class="prose max-w-none">
+                    <p class="mb-4 leading-relaxed">
+                        新入社員として一緒に働くことになり、とても嬉しく思います。<br>
+                        そして、この会社での新たな挑戦に胸を膨らませており、皆さんと共に成長していけることを楽しみにしています。
+                    </p>
+                    <p class="leading-relaxed">
+                        失敗や挫折もあるかもしれませんが、その度に一緒に立ち向かい、共に成長していきましょう。<br>
+                        よろしくお願いします！
+                    </p>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center py-8">
+                <!-- ここから「トップへ」ボタンを削除 -->
+            </footer>
         </div>
     </div>
 
