@@ -419,7 +419,14 @@
         function changeProfilePhoto(index) {
             const profileImage = document.getElementById('profileImage');
             profileImage.src = profileImages[index - 1];
+            // 3枚目だけ位置調整
+            if(index === 3){
+                profileImage.style.objectPosition = "center top";
+            } else {
+                profileImage.style.objectPosition = "center center";
+            }
         }
+        
 
         // YouTube Section Toggle
         const youtubeSection = document.getElementById('youtubeSection');
